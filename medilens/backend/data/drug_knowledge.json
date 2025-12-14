@@ -1,0 +1,186 @@
+{
+    "Paracetamol": {
+        "generic_name": "Paracetamol",
+        "brand_examples": [
+            "Calpol",
+            "Crocin",
+            "Tylenol"
+        ],
+        "class": "Analgesic and antipyretic",
+        "indications": [
+            "Relief of mild to moderate pain",
+            "Reduction of fever"
+        ],
+        "mechanism": "Helps reduce pain and fever, likely by acting on the brain's temperature-regulating center and pain pathways.",
+        "warnings": [
+            "Do not exceed the recommended daily amount.",
+            "High doses or long-term use can cause serious liver damage.",
+            "People with liver disease should use only under medical supervision."
+        ],
+        "common_side_effects": [
+            "Generally well tolerated at recommended doses",
+            "Occasionally nausea or stomach discomfort"
+        ],
+        "serious_side_effects": [
+            "Signs of liver problems such as yellowing of eyes or skin, dark urine, or unusual fatigue (rare but serious)."
+        ],
+        "interaction_notes": [
+            "Be careful with other medicines that also contain Paracetamol to avoid accidental overdose.",
+            "Alcohol use can increase the risk of liver damage."
+        ],
+        "info_source": "local_mock_db"
+    },
+    "Ibuprofen": {
+        "generic_name": "Ibuprofen",
+        "brand_examples": [
+            "Brufen",
+            "Advil",
+            "Motrin"
+        ],
+        "class": "Nonsteroidal anti-inflammatory drug (NSAID)",
+        "indications": [
+            "Relief of pain such as headache, muscle pain, or dental pain",
+            "Reduction of inflammation in conditions like sprains or joint pain",
+            "Reduction of fever"
+        ],
+        "mechanism": "Reduces pain, fever, and inflammation by blocking enzymes involved in producing inflammatory substances.",
+        "warnings": [
+            "Use with caution in people with kidney problems or stomach ulcers.",
+            "Avoid long-term use without medical supervision.",
+            "Can increase the risk of stomach bleeding, especially with alcohol or other NSAIDs."
+        ],
+        "common_side_effects": [
+            "Stomach pain or discomfort",
+            "Heartburn",
+            "Nausea"
+        ],
+        "serious_side_effects": [
+            "Black or bloody stools or vomiting blood (signs of stomach bleeding)",
+            "Severe stomach pain",
+            "Shortness of breath or chest pain (rare)"
+        ],
+        "interaction_notes": [
+            "Use carefully with other NSAIDs.",
+            "People taking blood thinners or medicines for blood pressure should only use under medical advice."
+        ],
+        "info_source": "local_mock_db"
+    },
+    "Amoxicillin": {
+        "generic_name": "Amoxicillin",
+        "brand_examples": [
+            "Amoxil",
+            "Mox",
+            "Augmentin (when combined with clavulanic acid)"
+        ],
+        "class": "Antibiotic (penicillin group)",
+        "indications": [
+            "Bacterial infections of the respiratory tract, ear, throat, urinary tract, and skin, as prescribed by a doctor."
+        ],
+        "mechanism": "Helps kill certain bacteria by interfering with formation of their cell walls.",
+        "warnings": [
+            "Should only be used for bacterial infections, not viral illnesses like common cold or flu.",
+            "People with a history of allergy to penicillin should avoid it unless clearly cleared by a doctor."
+        ],
+        "common_side_effects": [
+            "Nausea",
+            "Mild diarrhea",
+            "Rash"
+        ],
+        "serious_side_effects": [
+            "Severe allergic reactions such as swelling of face or difficulty breathing (requires immediate medical help)."
+        ],
+        "interaction_notes": [
+            "May affect the balance of normal gut bacteria.",
+            "Full prescribed course should be completed even if symptoms improve early, unless a doctor advises otherwise."
+        ],
+        "info_source": "local_mock_db"
+    },
+    "Cetirizine": {
+        "generic_name": "Cetirizine",
+        "brand_examples": [
+            "Cetzine",
+            "Zyrtec"
+        ],
+        "class": "Antihistamine",
+        "indications": [
+            "Relief of allergy symptoms such as sneezing, runny nose, or itching",
+            "Relief of itching and swelling in certain allergic skin conditions"
+        ],
+        "mechanism": "Blocks the effect of histamine, a substance released during allergic reactions.",
+        "warnings": [
+            "May cause drowsiness in some people.",
+            "Avoid activities that require full alertness until individual response is known."
+        ],
+        "common_side_effects": [
+            "Mild drowsiness or tiredness",
+            "Dry mouth",
+            "Headache"
+        ],
+        "serious_side_effects": [
+            "Severe allergic reactions are rare but possible."
+        ],
+        "interaction_notes": [
+            "Use with other medicines that cause drowsiness may increase sleepiness."
+        ],
+        "info_source": "local_mock_db"
+    },
+    "Metformin": {
+        "generic_name": "Metformin",
+        "brand_examples": [
+            "Glycomet",
+            "Glucophage"
+        ],
+        "class": "Antidiabetic agent (biguanide)",
+        "indications": [
+            "Helps control blood sugar levels in people with type 2 diabetes, as part of a treatment plan decided by a doctor."
+        ],
+        "mechanism": "Helps the body respond better to insulin and reduces the amount of sugar made by the liver.",
+        "warnings": [
+            "Not for type 1 diabetes or diabetic ketoacidosis.",
+            "Use with caution in kidney problems, as advised by a doctor.",
+            "Rare risk of a serious condition called lactic acidosis, especially with certain risk factors."
+        ],
+        "common_side_effects": [
+            "Stomach upset or nausea, especially when starting treatment",
+            "Loose stools"
+        ],
+        "serious_side_effects": [
+            "Very tired feeling, muscle pain, trouble breathing, or unusual sleepiness (possible signs of lactic acidosis, need urgent care)."
+        ],
+        "interaction_notes": [
+            "Usually used along with diet control and exercise.",
+            "Other medicines affecting kidney function may influence its safety."
+        ],
+        "info_source": "local_mock_db"
+    },
+    "Omeprazole": {
+        "generic_name": "Omeprazole",
+        "brand_examples": [
+            "Omez",
+            "Prilosec"
+        ],
+        "class": "Proton pump inhibitor (PPI)",
+        "indications": [
+            "Short-term treatment of heartburn and acid reflux symptoms",
+            "Support in healing certain stomach or duodenal ulcers as prescribed"
+        ],
+        "mechanism": "Reduces the amount of acid made in the stomach.",
+        "warnings": [
+            "Long-term use should be under medical supervision.",
+            "Prolonged use may be associated with low levels of certain minerals or vitamins, and rarely, bone issues."
+        ],
+        "common_side_effects": [
+            "Headache",
+            "Stomach discomfort",
+            "Nausea"
+        ],
+        "serious_side_effects": [
+            "Severe stomach pain, ongoing diarrhea, or unusual fatigue should be discussed with a doctor."
+        ],
+        "interaction_notes": [
+            "May affect absorption of some medicines that need stomach acid.",
+            "Should not be used as a long-term self-treatment for repeated chest pain without medical check-up."
+        ],
+        "info_source": "local_mock_db"
+    }
+}

@@ -1,0 +1,3 @@
+
+class PubChemClient:
+    pass

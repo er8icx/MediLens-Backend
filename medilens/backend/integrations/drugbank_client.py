@@ -1,0 +1,3 @@
+
+class DrugBankClient:
+    pass
