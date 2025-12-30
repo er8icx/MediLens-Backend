@@ -1,10 +1,7 @@
 # backend/agents/fact_checker_agent.py
-
 from typing import Dict, Any, List
 import re
-
 from core.models import RetrievedChunk
-
 
 UNSAFE_PATTERNS = [
     r"\b\d+\s?(mg|ml|g)\b",       # dosage amounts
