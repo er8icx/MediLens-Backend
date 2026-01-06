@@ -1,4 +1,3 @@
-
 # backend/core/models.py
 
 from pydantic import BaseModel, Field
@@ -27,4 +26,3 @@ class DrugInfo(BaseModel):
     """
     name: str
     description: Optional[str] = None
-
