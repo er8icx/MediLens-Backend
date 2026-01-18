@@ -34,52 +34,24 @@ def _query_openfda(search_query: str) -> list:
     data = response.json()
     return data.get("results", [])
 
+import requests
 
-def fetch_openfda_drug_info(drug_name: str) -> List[RetrievedChunk]:
-    """
-    Fetch drug label information from OpenFDA.
-
-    Strategy:
-    1. Try generic_name search
-    2. Fallback to brand_name search
-    """
-
-    results = _query_openfda(
-        f'openfda.generic_name:"{drug_name}"'
+def fetch_drug_data(medicine_name: str) -> dict:
+    url = (
+        "https://api.fda.gov/drug/label.json"
+        f"?search=openfda.generic_name:\"{medicine_name}\"&limit=1"
     )
 
-    
-    if not results:
-        results = _query_openfda(
-            f'openfda.brand_name:"{drug_name}"'
-        )
+    try:
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        data = response.json()
 
-    chunks: List[RetrievedChunk] = []
+        if "results" not in data or not data["results"]:
+            return {}
 
-    for item in results:
-        text_parts = []
+        return data["results"][0]
 
-        if "description" in item:
-            text_parts.extend(item["description"])
-
-        if "indications_and_usage" in item:
-            text_parts.extend(item["indications_and_usage"])
-
-        if "warnings" in item:
-            text_parts.extend(item["warnings"])
-
-        if "adverse_reactions" in item:
-            text_parts.extend(item["adverse_reactions"])
-
-        if not text_parts:
-            continue
-
-        chunks.append(
-            RetrievedChunk(
-                text=" ".join(text_parts),
-                source="openfda",
-                reference=drug_name,
-            )
-        )
-
-    return chunks
+    except requests.exceptions.RequestException as e:
+        print(f"OpenFDA error: {e}")
+        return {}   # ✅ IMPORTANT: return empty dict, NOT crash

@@ -6,32 +6,29 @@ from core.models import RetrievedChunk
 from core.config import Config
 
 
-def build_context(chunks: List[RetrievedChunk]) -> str:
+def build_context(drug_name: str, drug_data: dict) -> str:
     """
-    Build a formatted context string from retrieved chunks.
-
-    Used by generator and fact-checker services.
+    Builds readable context for LLM + frontend from drug data
     """
 
-    if not chunks:
-        return ""
+    if not drug_data:
+        return f"No detailed data found for {drug_name}."
 
-    context_blocks = []
+    parts = [f"Medicine name: {drug_name.capitalize()}"]
 
-    for idx, chunk in enumerate(chunks, start=1):
-        if not chunk.text:
-            continue
+    if "purpose" in drug_data:
+        parts.append(f"Purpose: {drug_data['purpose']}")
 
-        block = (
-            f"[Source {idx} | {chunk.source}]\n"
-            f"{chunk.text.strip()}"
-        )
-        context_blocks.append(block)
+    if "indications" in drug_data:
+        parts.append(f"Uses: {drug_data['indications']}")
 
-    full_context = "\n\n".join(context_blocks)
+    if "warnings" in drug_data:
+        parts.append(f"Warnings: {drug_data['warnings']}")
 
-    return _trim_context(full_context)
+    if "dosage" in drug_data:
+        parts.append(f"Dosage: {drug_data['dosage']}")
 
+    return "\n".join(parts)
 
 def _trim_context(context: str) -> str:
     """

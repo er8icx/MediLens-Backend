@@ -1,0 +1,64 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.medicine-page {
+  display: flex;
+  justify-content: center;
+  gap: 40px;               /* ✅ Space between summary & chatbot */
+  margin-top: 80px;
+  padding: 0 40px;
+}
+
+/* =========================
+   MEDICINE SUMMARY
+========================= */
+
+.medicine-content {
+  width: 100%;
+  max-width: 720px;        /* ✅ Reduced length */
+  background-color: #2b2b2b;
+  padding: 40px;
+  border-radius: 12px;
+
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.medicine-content h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.medicine-content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #eaeaea;
+}
+
+/* =========================
+   CHATBOT CONTAINER
+========================= */
+
+.medicine-chatbot {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
+
+@media (max-width: 1100px) {
+  .medicine-page {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .medicine-content,
+  .medicine-chatbot {
+    max-width: 100%;
+  }
+}

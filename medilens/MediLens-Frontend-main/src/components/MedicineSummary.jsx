@@ -13,24 +13,23 @@ export default function MedicineSummary({ medicineName }) {
       setError("");
 
       try {
-        const res = await fetch(
-          "http://localhost:8000/api/medicine/summary",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              medicine: medicineName,
-            }),
-          }
-        );
+        const res = await fetch("http://localhost:8000/search", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            medicine: medicineName, // ✅ ONLY what backend expects
+          }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to fetch summary");
         }
 
         const data = await res.json();
+
+        // ✅ CORRECT KEY
         setSummary(data.summary);
       } catch (err) {
         setError("Failed to load medicine summary.");
@@ -40,7 +39,7 @@ export default function MedicineSummary({ medicineName }) {
     };
 
     fetchSummary();
-  }, [medicineName]); // ✅ dependency array MUST be here
+  }, [medicineName]);
 
   if (loading) return <p>Loading medicine summary...</p>;
   if (error) return <p>{error}</p>;

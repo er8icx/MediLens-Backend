@@ -1,51 +1,32 @@
-# backend/core/llm_client.py
-from typing import Optional
-from core.config import Config
-
+import requests
 
 class LLMClient:
-    """
-    LLM CLIENT
+    def __init__(self, model="qwen2.5:0.5b"):
+        self.url = "http://localhost:11434/api/generate"
+        self.model = model
 
-    Single interface for all LLM interactions.
-    Agents must NEVER call an LLM provider directly.
-    """
+    def generate(self, prompt: str) -> str:
+        payload = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": False,
+        }
 
-    def __init__(self):
-        self.provider = Config.LLM_PROVIDER
-        self.model = Config.LLM_MODEL
-        self.temperature = Config.LLM_TEMPERATURE
+        res = requests.post(self.url, json=payload, timeout=120)
+        res.raise_for_status()
+        return res.json()["response"].strip()
 
-    async def generate(self, prompt: str) -> str:
+    def summarize(self, medicine: str) -> str:
+        prompt = f"""
+        Give a short, clear medical summary of {medicine}.
+        Include:
+        - What it is
+        - Common uses
+        - Safety notes
+        Keep it concise.
         """
-        Generate text from the LLM.
-        Used by Generator Agent.
-        """
-
-        if self.provider == "dummy":
-            return (
-                "This is a dummy LLM response.\n\n"
-                "Prompt received:\n"
-                f"{prompt[:500]}"
-            )
-
-        raise NotImplementedError(
-            "Real LLM provider not configured yet."
-        )
-
-    async def summarize(self, text: str, mode: str = "patient_friendly") -> str:
-        """
-        Summarize trusted text.
-        Used by Summariser Agent.
-        """
-
-        if self.provider == "dummy":
-            return text[:400] + "..."
-
-        raise NotImplementedError(
-            "Real LLM provider not configured yet."
-        )
+        return self.generate(prompt)
 
 
-
+# IMPORTANT: export instance
 llm_client = LLMClient()

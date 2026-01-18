@@ -1,0 +1,66 @@
+.tool-card {
+  width: 460px;
+  height: 340px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.tool-header {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.tool-body {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.tool-placeholder {
+  color: #aaa;
+  text-align: center;
+  margin: auto;
+}
+
+.chat-message {
+  background-color: #3a3a3a;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 85%;
+  font-size: 14px;
+  color: white;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background-color: #4c6cff;
+}
+
+.tool-footer {
+  padding: 14px;
+  border-top: 1px solid #444;
+}
+
+.tool-footer input {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+.tool-footer input:focus {
+  outline: none;
+  border-color: #4c6cff;
+}
